@@ -39,6 +39,40 @@
 	border-color: #f26d21;
 }
 
+.ant-select-dropdown
+	.ant-select-item-option-active:not(
+		.ant-select-item-option-disabled
+	),
+.ant-select-dropdown .ant-select-item {
+	padding: 11px 12px;
+}
+
+.ant-select-dropdown
+	.ant-select-item-option-active:not(
+		.ant-select-item-option-disabled
+	)::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	border-left: 4px solid #f26d21;
+	background-color: white;
+}
+
+.ant-select-dropdown
+	.ant-select-item-option-active:not(
+		.ant-select-item-option-disabled
+	),
+.ant-select-dropdown
+	.ant-select-item-option-active:not(.ant-select-item-option-disabled)
+	.ant-select-item-option-content,
+.ant-select-dropdown
+	.ant-select-item-option-active:not(.ant-select-item-option-disabled)
+	.ant-select-item-option-content {
+	background-color: white;
+}
+
 /* =============================================================================== */
 /* Select arrow */
 /* =============================================================================== */
@@ -100,4 +134,38 @@
 	.ant-checkbox-inner {
 	background-color: #f26d21;
 	border-color: #f26d21;
+}
+
+/* Form */
+.ant-form-vertical
+	.ant-form-item-label
+	.ant-form-item-required::after {
+	visibility: visible;
+}
+.ant-form-item
+	.ant-form-item-label
+	> label.ant-form-item-required:not(
+		.ant-form-item-required-mark-optional
+	)::before {
+	display: none;
+}
+
+.ant-form-item .ant-form-item-label > label::after {
+	content: "*";
+	color: red;
+}
+
+/* Dropdown */
+
+.ant-dropdown .ant-dropdown-menu {
+	padding: 0;
+}
+
+/*  Button  */
+
+.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+	color: white;
+	border-color: #f26d21;
+	background: #f26d21;
+	opacity: 0.7;
 }

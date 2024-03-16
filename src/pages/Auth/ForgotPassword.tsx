@@ -1,9 +1,30 @@
 import { Button, Form, Input } from "antd";
+import { useForm } from "antd/es/form/Form";
+import {
+	confirmPasswordReset,
+	sendPasswordResetEmail,
+} from "firebase/auth";
 import React from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import { auth } from "../../lib/firebase";
 
 const ForgotPassword = () => {
 	const navigate = useNavigate();
+	const [form] = useForm();
+
+	const onFinish = async () => {
+		const { email } = form.getFieldsValue();
+		await sendPasswordResetEmail(auth, email, {
+			url: "http://localhost:3000/login",
+		}).then((res) => {
+			console.log(res);
+			navigate("/update-password");
+		});
+	};
+
+	const emailRegex = new RegExp(
+		"^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$",
+	);
 	return (
 		<div className="mt-32">
 			<div className="font-bold text-primary text-4xl mb-2">
@@ -14,23 +35,29 @@ const ForgotPassword = () => {
 				phục lại mật khẩu
 			</div>
 
-			<Form layout="vertical">
+			<Form form={form} onFinish={onFinish} layout="vertical">
 				<Form.Item
+					name={"email"}
 					label={
 						<div className="text-[#4D4D4D] font-semibold text-base">
 							Email
 						</div>
 					}
+					rules={[
+						{
+							required: true,
+							message: "Trường này không được trống",
+						},
+						{
+							pattern: emailRegex,
+							message: "Vui lòng điền một email hợp lệ",
+						},
+					]}
 				>
 					<Input placeholder="Nhập email của bạn" />
 				</Form.Item>
 				<Form.Item>
-					<Button
-						onClick={() => {
-							navigate("/update-password");
-						}}
-						className="btn btn-primary"
-					>
+					<Button htmlType="submit" className="btn btn-primary">
 						Đăng nhập
 					</Button>
 				</Form.Item>

@@ -2,8 +2,8 @@ import React from "react";
 
 const Header = () => {
 	return (
-		<div className="fixed top-0 left-0 right-0 ">
-			<div className="container mx-auto flex items-center justify-between py-6 px-24">
+		<div className="fixed top-0 left-0 right-0 bg-smoke z-50">
+			<div className="container bg-smoke mx-auto flex items-center justify-between py-6 px-24">
 				<div>
 					<img
 						src="/images/brand.jpg"

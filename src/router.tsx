@@ -1,5 +1,5 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
-import { AuthLayout, MainLayout } from "./layouts/index";
+import { AuthLayout, MainLayout, RootLayout } from "./layouts/index";
 import {
 	ForgotPassword,
 	Login,
@@ -30,10 +30,6 @@ export const router = createBrowserRouter([
 		path: "/",
 		element: <MainLayout />,
 		children: [
-			{
-				path: "/",
-				element: <Navigate to={"/jd"} />,
-			},
 			{
 				path: "/jd",
 				element: <Welcome />,

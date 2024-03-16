@@ -9,6 +9,7 @@ import {
 } from "../../icons/index";
 import { useSelector } from "react-redux";
 import { RootState } from "../../contexts/store";
+import UserTab from "./components/Auth/UserTab";
 
 export type NavItemType = {
 	label?: string;
@@ -47,10 +48,6 @@ const Header = () => {
 	const [selectedNav, setSelectedNav] = useState<string>("");
 	const param = useLocation();
 
-	useEffect(() => {
-		setSelectedNav(param.pathname);
-	}, [param]);
-
 	const isSelectedNav = (navItem: NavItemType) => {
 		if (navItem.to) {
 			if (selectedNav.includes(navItem.to)) {
@@ -72,10 +69,16 @@ const Header = () => {
 					/>
 				</div>
 
-				<div className="flex items-center gap-x-6">
-					{navItems.map((nav) => (
-						<NavItem NavItem={nav} />
-					))}
+				<div className="flex gap-2 items-center">
+					<div className="flex flex-1 items-center gap-x-6">
+						{navItems.map((nav) => (
+							<NavItem NavItem={nav} />
+						))}
+					</div>
+
+					<div>
+						<UserTab />
+					</div>
 				</div>
 			</div>
 		</div>
