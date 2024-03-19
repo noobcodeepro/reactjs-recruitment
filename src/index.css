@@ -17,6 +17,20 @@
 	font-size: 20px;
 }
 
+.ant-input,
+.ant-input-outlined,
+.ant-input-outlined:focus,
+.ant-input-outlined:hover,
+.ant-input-outlined:focus-within,
+.ant-input-outlined.ant-input-disabled,
+.ant-input-outlined[disabled],
+.ant-input-outlined:hover,
+.ant-input-outlined:focus-within {
+	border: none;
+	outline: none;
+	box-shadow: none;
+}
+
 /* =============================================================================== */
 /* Select */
 /* =============================================================================== */

@@ -5,6 +5,8 @@ import React from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { auth } from "../../lib/firebase";
 
+const { Password } = Input;
+
 const UpdatePassword = () => {
 	const [form] = useForm();
 	const navigate = useNavigate();
@@ -13,9 +15,6 @@ const UpdatePassword = () => {
 	let mode: string | null = searchParams.get("mode");
 	let apiKey: string | null = searchParams.get("apiKey");
 	let continueUrl: string | null = searchParams.get("continueUrl");
-	console.log(mode);
-	console.log(apiKey);
-	console.log(continueUrl);
 
 	const resetPassword = async ({
 		oobCode,
@@ -65,7 +64,7 @@ const UpdatePassword = () => {
 						</div>
 					}
 				>
-					<Input placeholder="Nhập mật khẩu" />
+					<Password placeholder="Nhập mật khẩu" />
 				</Form.Item>
 				<Form.Item
 					name={"passwordConfirm"}
@@ -94,7 +93,7 @@ const UpdatePassword = () => {
 						</div>
 					}
 				>
-					<Input placeholder="Nhập lại mật khẩu" />
+					<Password placeholder="Nhập lại mật khẩu" />
 				</Form.Item>
 				<Form.Item>
 					<Button htmlType="submit" className="btn btn-primary">

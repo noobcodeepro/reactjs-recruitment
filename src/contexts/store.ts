@@ -1,5 +1,6 @@
 import { Tuple, configureStore } from "@reduxjs/toolkit";
 import authReducer from "./Auth/auth.slice";
+import factoryReducer from "./Factory/factory.slice";
 import { useDispatch } from "react-redux";
 import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/es/persistReducer";
@@ -20,6 +21,7 @@ const authPersistConfig = { key: "auth", storage };
 export const store = configureStore({
 	reducer: {
 		auth: persistReducer(authPersistConfig, authReducer),
+		factory: factoryReducer,
 	},
 	middleware: () => new Tuple(thunk),
 });

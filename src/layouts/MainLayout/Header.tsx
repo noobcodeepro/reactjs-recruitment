@@ -32,25 +32,24 @@ const navItems: NavItemType[] = [
 		role: "student",
 	},
 	{
-		to: "/home/jd",
+		to: "/jd",
 		icon: <FindDocument />,
 		label: "Tìm kiếm việc làm",
 		role: "enterprise",
 	},
 	{
-		to: "/home/jd",
+		to: "/factory-register",
 		icon: <FactoryRegister />,
 		label: "Doanh nghiệp đăng ký",
 		role: "enterprise",
 	},
 ];
 const Header = () => {
-	const [selectedNav, setSelectedNav] = useState<string>("");
 	const param = useLocation();
 
 	const isSelectedNav = (navItem: NavItemType) => {
 		if (navItem.to) {
-			if (selectedNav.includes(navItem.to)) {
+			if (param.pathname.includes(navItem.to)) {
 				return true;
 			} else {
 				return false;
@@ -59,7 +58,7 @@ const Header = () => {
 		return false;
 	};
 	return (
-		<div className=" fixed top-0 left-0 right-0 bg-white">
+		<div className=" fixed top-0 left-0 right-0 bg-white z-10">
 			<div className="container mx-auto flex items-center justify-between py-6 px-24">
 				<div>
 					<img
@@ -70,9 +69,13 @@ const Header = () => {
 				</div>
 
 				<div className="flex gap-2 items-center">
-					<div className="flex flex-1 items-center gap-x-6">
+					<div className="flex flex-1 items-center gap-x-6 ">
 						{navItems.map((nav) => (
-							<NavItem NavItem={nav} />
+							<NavItem
+								key={nav.label}
+								NavItem={nav}
+								isSelected={isSelectedNav(nav)}
+							/>
 						))}
 					</div>
 

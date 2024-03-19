@@ -43,7 +43,7 @@ const UserTab = () => {
 				<Dropdown
 					className="py-3 pr-2 text-white w-[160px]"
 					menu={{ items }}
-					placement="bottomCenter"
+					placement="bottom"
 					arrow
 				>
 					<Button

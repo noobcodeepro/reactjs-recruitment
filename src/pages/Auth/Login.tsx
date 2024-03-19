@@ -7,11 +7,10 @@ import Select from "../../components/Select/Select";
 import { useAppDispatch } from "../../contexts/store";
 import { authLogin } from "../../contexts/Auth/auth.slice";
 import { useForm } from "antd/es/form/Form";
+import emailRegex from "../../regex/emailRegex";
 
 const { Password } = Input;
-const emailRegex = new RegExp(
-	"^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$",
-);
+
 const Login = () => {
 	const [form] = useForm();
 	const [disabledButton, setDisabledButton] = useState(true);

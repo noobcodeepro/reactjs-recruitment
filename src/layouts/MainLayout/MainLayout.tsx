@@ -14,8 +14,10 @@ const MainLayout = () => {
 				<div>
 					<Header />
 					<div className="w-full bg-smoke">
-						<div className="mt-[102px] container mx-auto flex items-center gap-44 min-h-screen ">
-							<Outlet />
+						<div className="mt-[102px] container mx-auto min-h-screen ">
+							<div className="pt-[44px] px-24">
+								<Outlet />
+							</div>
 						</div>
 					</div>
 					<Footer />

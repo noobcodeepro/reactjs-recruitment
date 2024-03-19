@@ -17,8 +17,8 @@ const ForgotPassword = () => {
 		await sendPasswordResetEmail(auth, email, {
 			url: "http://localhost:3000/login",
 		}).then((res) => {
-			console.log(res);
-			navigate("/update-password");
+			alert("Email đã được gửi, kiểm tra email để thay password");
+			navigate("/login");
 		});
 	};
 

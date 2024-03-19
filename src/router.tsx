@@ -1,11 +1,13 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import { AuthLayout, MainLayout, RootLayout } from "./layouts/index";
+import Jobs from "./pages/Jobs/index";
+
 import {
 	ForgotPassword,
 	Login,
 	UpdatePassword,
 } from "./pages/Auth/index";
-import Welcome from "./pages/Welcome/Welcome";
+import FactoryRegister from "./pages/Factory/FactoryRegister";
 
 export const router = createBrowserRouter([
 	{
@@ -32,7 +34,11 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				path: "/jd",
-				element: <Welcome />,
+				element: <Jobs />,
+			},
+			{
+				path: "/factory-register",
+				element: <FactoryRegister />,
 			},
 		],
 	},
