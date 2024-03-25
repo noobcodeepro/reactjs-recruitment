@@ -26,7 +26,7 @@ const navItems: NavItemType[] = [
 		role: "student",
 	},
 	{
-		to: "/register/u",
+		to: "/jd-register",
 		icon: <FormEdit />,
 		label: "Đăng ký trực tuyến",
 		role: "student",

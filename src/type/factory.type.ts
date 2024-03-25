@@ -5,6 +5,7 @@ interface IFactory {
 	name: string;
 	id: string;
 	manager: IManager;
+	photoUrl?: string;
 }
 
 interface IManager {

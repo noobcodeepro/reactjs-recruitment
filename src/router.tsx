@@ -8,6 +8,7 @@ import {
 	UpdatePassword,
 } from "./pages/Auth/index";
 import FactoryRegister from "./pages/Factory/FactoryRegister";
+import JobRegister from "./pages/Jobs/JobRegister";
 
 export const router = createBrowserRouter([
 	{
@@ -39,6 +40,20 @@ export const router = createBrowserRouter([
 			{
 				path: "/factory-register",
 				element: <FactoryRegister />,
+			},
+		],
+	},
+	{
+		path: "/",
+		element: <MainLayout />,
+		children: [
+			{
+				path: "/jd",
+				element: <Jobs />,
+			},
+			{
+				path: "/jd-register",
+				element: <JobRegister />,
 			},
 		],
 	},

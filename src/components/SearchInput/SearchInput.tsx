@@ -11,7 +11,7 @@ const SearchInput = (props: InputProps) => {
 					style={{ fontSize: "20px", color: "#F26D21" }}
 				/>
 			</div>
-			<Input {...props} />
+			<Input autoComplete="off" {...props} />
 		</div>
 	);
 };
