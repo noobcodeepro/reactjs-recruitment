@@ -150,6 +150,20 @@
 	border-color: #f26d21;
 }
 
+/* Mobile checkbox */
+.ant-checkbox-wrapper.flex.flex-row-reverse .ant-checkbox + span {
+	flex: 1;
+}
+
+.ant-checkbox-wrapper.flex.flex-row-reverse {
+	padding: 9px 12px;
+	border-radius: 6px;
+}
+
+.ant-checkbox-wrapper-checked.ant-checkbox-wrapper.flex.flex-row-reverse {
+	background-color: #f1f3f5;
+}
+
 /* Form */
 .ant-form-vertical
 	.ant-form-item-label
@@ -213,4 +227,35 @@
 .ant-picker .ant-picker-input {
 	flex-direction: row-reverse;
 	gap: 10px;
+}
+
+/* Button group */
+
+.ant-radio-button-wrapper-checked:not(
+		.ant-radio-button-wrapper-disabled
+	).bg-primary {
+	color: white;
+	background-color: #f26d21;
+}
+
+.ant-radio-button-wrapper {
+	height: 42px;
+	outline: none;
+	border: none;
+	border-radius: 8px;
+	font-size: 14px;
+	background-color: #f1f3f5;
+}
+
+.ant-radio-group-large .ant-radio-button-wrapper {
+	border: none;
+}
+
+.ant-radio-button-wrapper:not(:first-child)::before {
+	display: none;
+}
+
+.ant-radio-group-large .ant-radio-button-wrapper {
+	font-size: 14px;
+	font-weight: 500;
 }

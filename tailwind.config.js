@@ -44,6 +44,11 @@ module.exports = {
 						backgroundColor: "#cc1f1a",
 					},
 				},
+				".btn-outline": {
+					backgroundColor: "#fff",
+					borderColor: "#F26D21",
+					color: "#F26D21",
+				},
 			});
 		}),
 	],

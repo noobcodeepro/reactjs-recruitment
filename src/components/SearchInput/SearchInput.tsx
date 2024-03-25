@@ -1,15 +1,13 @@
-import { SearchOutlined } from "@ant-design/icons";
 import { Input } from "antd";
-import { InputProps, SearchProps } from "antd/es/input";
+import { InputProps } from "antd/es/input";
 import React from "react";
+import { SearchOutline } from "../../icons";
 
 const SearchInput = (props: InputProps) => {
 	return (
-		<div className="flex items-center bg-white pl-4">
+		<div className="flex items-center bg-white pl-4 rounded-lg lg:rounded-none">
 			<div>
-				<SearchOutlined
-					style={{ fontSize: "20px", color: "#F26D21" }}
-				/>
+				<SearchOutline />
 			</div>
 			<Input autoComplete="off" {...props} />
 		</div>

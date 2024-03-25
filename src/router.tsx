@@ -52,7 +52,7 @@ export const router = createBrowserRouter([
 				element: <Jobs />,
 			},
 			{
-				path: "/jd-register",
+				path: "/job-register",
 				element: <JobRegister />,
 			},
 		],

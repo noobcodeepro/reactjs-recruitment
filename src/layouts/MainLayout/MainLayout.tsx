@@ -13,9 +13,9 @@ const MainLayout = () => {
 			{user ? (
 				<div>
 					<Header />
-					<div className="w-full bg-smoke">
-						<div className="mt-[102px] container mx-auto min-h-screen ">
-							<div className="pt-[44px] px-24">
+					<div className="w-full bg-smoke pb-4">
+						<div className="mt-[48px] lg:mt-[102px] container mx-auto min-h-screen ">
+							<div className="pt-[22px] lg:pt-[44px] px-4 lg:px-24">
 								<Outlet />
 							</div>
 						</div>
