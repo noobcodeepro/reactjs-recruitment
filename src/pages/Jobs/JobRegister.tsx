@@ -1,5 +1,6 @@
 import {
 	CalendarOutlined,
+	CloseCircleOutlined,
 	CloudUploadOutlined,
 	PlusOutlined,
 	SendOutlined,
@@ -37,7 +38,7 @@ const JobRegister = () => {
 	}, []);
 	return (
 		<div className="space-y-4">
-			<div className="text-primary font-bold text-3xl uppercase">
+			<div className="text-primary font-bold text-2xl lg:text-3xl uppercase">
 				Điền thông tin đăng ký
 			</div>
 
@@ -68,13 +69,14 @@ const JobRegister = () => {
 					</Upload>
 				</Form.Item>
 
-				<div className="flex gap-12">
-					<div className="w-[524px]">
+				<div className="block lg:flex gap-12">
+					<div className="lg:w-[524px]">
 						<Form.Item name={"name"} label="Họ và tên">
 							<Input placeholder="Nhập họ và tên" />
 						</Form.Item>
 						<Form.Item name={"dob"} label="Ngày sinh">
 							<DatePicker
+								removeIcon={<CloseCircleOutlined />}
 								allowClear
 								suffixIcon={<CalendarOutline />}
 								placeholder="Nhập họ và tên"
@@ -102,7 +104,7 @@ const JobRegister = () => {
 						</Form.Item>
 					</div>
 
-					<div className="w-[524px]">
+					<div className="lg:w-[524px]">
 						<Form.Item name="school" label="Trường đang học">
 							<Input placeholder="Nhập trường đang học" />
 						</Form.Item>
@@ -139,7 +141,7 @@ const JobRegister = () => {
 						</Form.Item>
 					</div>
 				</div>
-				<div className="text-[13px] text-gray font-normal">
+				<div className="text-[13px] text-gray font-normal hidden lg:block">
 					<span className="text-red-500">*</span> là những trường
 					thông tin bắt buộc
 				</div>

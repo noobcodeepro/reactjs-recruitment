@@ -51,12 +51,12 @@ const FactoryRegister = () => {
 	};
 	return (
 		<div>
-			<div className="uppercase text-primary font-bold text-[32px] mb-4">
+			<div className="uppercase text-primary font-bold text-2xl lg:text-[32px] mb-4">
 				Điền thông tin đăng ký
 			</div>
 
 			<Form onFinish={onFinish} form={form} layout="vertical">
-				<div className="grid grid-cols-2 gap-x-16">
+				<div className="lg:grid grid-cols-2 gap-x-16">
 					<div>
 						<Form.Item
 							name={"email"}
@@ -145,7 +145,7 @@ const FactoryRegister = () => {
 					</div>
 				</div>
 
-				<div className="mb-6 font-normal text-[13px] text-gray">
+				<div className="mb-6 font-normal text-[13px] text-gray hidden lg:block">
 					<span className="text-red-500">*</span> là những trường
 					thông tin bắt buộc
 				</div>

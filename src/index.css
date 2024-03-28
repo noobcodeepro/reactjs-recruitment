@@ -229,6 +229,10 @@
 	gap: 10px;
 }
 
+.ant-picker-clear {
+	padding-right: 8px;
+}
+
 /* Button group */
 
 .ant-radio-button-wrapper-checked:not(
@@ -258,4 +262,16 @@
 .ant-radio-group-large .ant-radio-button-wrapper {
 	font-size: 14px;
 	font-weight: 500;
+}
+
+/* Modal */
+
+/* Modal transparent */
+.ant-modal.transparent .ant-modal-content {
+	background-color: transparent;
+	padding: 0;
+}
+
+.ant-modal.transparent .ant-modal-header {
+	display: none;
 }
