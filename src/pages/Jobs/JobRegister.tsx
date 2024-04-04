@@ -1,9 +1,6 @@
 import {
-	CalendarOutlined,
 	CaretDownFilled,
 	CloseCircleOutlined,
-	CloudUploadOutlined,
-	PlusOutlined,
 	SendOutlined,
 } from "@ant-design/icons";
 import {
@@ -23,7 +20,6 @@ import { useSelector } from "react-redux";
 import { emailRegex } from "../../regex";
 import { db, storage } from "../../lib/firebase";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import { v4 as uuidv4 } from "uuid";
 import { addDoc, collection } from "firebase/firestore";
 import AnnounceModal from "../../components/AnnounceModal/AnnounceModal";
 

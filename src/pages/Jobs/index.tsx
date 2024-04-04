@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import Filter from "./Filter";
-import JobList from "./JobList";
+import Filter from "./components/Filter";
+import JobList from "./components/JobList";
 import { RootState, useAppDispatch } from "../../contexts/store";
 import { getFactories } from "../../contexts/Factory/factory.slice";
 import { getJobs } from "../../contexts/Job/job.slice";
 import { useSelector } from "react-redux";
 
-import SkeletonJobList from "./SkeletonJobList";
+import SkeletonJobList from "./components/SkeletonJobList";
 
 const Jobs = () => {
 	const dispatch = useAppDispatch();
@@ -17,7 +17,7 @@ const Jobs = () => {
 	useEffect(() => {
 		dispatch(getFactories());
 		dispatch(getJobs({}));
-	}, []);
+	}, [dispatch]);
 	return (
 		<div className="flex flex-col gap-y-6 lg:gap-y-10">
 			<Filter />

@@ -1,40 +1,19 @@
-import {
-	Button,
-	Form,
-	Modal,
-	Radio,
-	RadioChangeEvent,
-	Select,
-} from "antd";
+import { Button, Form, Select } from "antd";
 import { DefaultOptionType } from "antd/es/select";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../../contexts/store";
 import { getExpertises } from "../../contexts/Expertise/expertise.slice";
-import {
-	ArrowLeftOutlined,
-	ArrowRightOutlined,
-	CaretDownFilled,
-	PlusOutlined,
-	SearchOutlined,
-} from "@ant-design/icons";
+import { CaretDownFilled, PlusOutlined } from "@ant-design/icons";
 import { useForm } from "antd/es/form/Form";
 import { db } from "../../lib/firebase";
 import {
-	addDoc,
 	collection,
-	getDoc,
 	getDocs,
 	query,
 	where,
 } from "firebase/firestore";
 import { IQuiz } from "../../type/quiz.type";
-import Timer from "../../components/Timer/Timer";
-import {
-	ArrowLeftOutline,
-	ArrowRightOutline,
-	ClockOutline,
-} from "../../icons";
 import QuizForm from "./component/QuizForm";
 
 const Quiz = () => {

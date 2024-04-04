@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Pagination from "../../components/Pagination/Pagination";
-import { IJob } from "../../type/job.type";
+import Pagination from "../../../components/Pagination/Pagination";
+import { IJob } from "../../../type/job.type";
 import JobItem from "./JobItem";
 
 const JobList = ({ jobsList }: { jobsList: IJob[] }) => {

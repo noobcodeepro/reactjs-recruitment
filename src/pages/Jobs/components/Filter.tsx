@@ -13,12 +13,12 @@ import { DefaultOptionType } from "antd/es/select";
 import { SearchOutlined } from "@ant-design/icons";
 import { useSelector } from "react-redux";
 
-import { RootState, useAppDispatch } from "../../contexts/store";
-import { getExpertises } from "../../contexts/Expertise/expertise.slice";
-import { getJobs } from "../../contexts/Job/job.slice";
-import SearchInput from "../../components/SearchInput/SearchInput";
-import Select from "../../components/Select/Select";
-import { FilterOutline } from "../../icons";
+import { RootState, useAppDispatch } from "../../../contexts/store";
+import { getExpertises } from "../../../contexts/Expertise/expertise.slice";
+import { getJobs } from "../../../contexts/Job/job.slice";
+import SearchInput from "../../../components/SearchInput/SearchInput";
+import Select from "../../../components/Select/Select";
+import { FilterOutline } from "../../../icons";
 
 const Filter = () => {
 	const dispatch = useAppDispatch();

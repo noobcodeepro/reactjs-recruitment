@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-import { IJob } from "../../type/job.type";
+import { IJob } from "../../../type/job.type";
 import { Divider, Modal } from "antd";
-import { Download, MailOutline, PhoneOutline } from "../../icons";
-import formatPhoneNumber from "../../utils/formatPhoneNumber";
+import { Download, MailOutline, PhoneOutline } from "../../../icons";
+import formatPhoneNumber from "../../../utils/formatPhoneNumber";
 import { getDownloadURL, ref } from "firebase/storage";
-import { storage } from "../../lib/firebase";
+import { storage } from "../../../lib/firebase";
 
 const JobItem = ({ job }: { job: IJob }) => {
 	const [pdfLink, setPdfLink] = useState("");

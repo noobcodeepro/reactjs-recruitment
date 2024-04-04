@@ -21,11 +21,15 @@ const QuizForm = ({ onSubmit, currentQuiz }: IQuizFormProps) => {
 	const [attendantAnswer, setAttendantAnswer] = useState<string[]>(
 		new Array(currentQuiz?.questions.length).fill(""),
 	);
-
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const answerCollection = collection(db, "answers");
+	const currentUserUID = useSelector(
+		(state: RootState) => state.auth.user?.uid,
+	);
+	const quizOptions = ["A", "B", "C", "D"];
 
 	// Timer
-
+	// This will be called when time's up
 	const fetchApi = useCallback(async () => {
 		try {
 			// Thực hiện cuộc gọi API ở đây
@@ -47,7 +51,14 @@ const QuizForm = ({ onSubmit, currentQuiz }: IQuizFormProps) => {
 		} catch (error) {
 			console.error("Error fetching API:", error);
 		}
-	}, []);
+	}, [
+		onSubmit,
+		attendantAnswer,
+		currentQuiz.id,
+		answerCollection,
+		currentQuiz.questions.length,
+		currentUserUID,
+	]);
 
 	const onSubmitQuiz = () => {
 		setIsModalOpen(true);
@@ -56,7 +67,6 @@ const QuizForm = ({ onSubmit, currentQuiz }: IQuizFormProps) => {
 	const handleCancel = () => {
 		setIsModalOpen(false);
 	};
-	const quizOptions = ["A", "B", "C", "D"];
 
 	const onAnswer = (e: RadioChangeEvent) => {
 		const data = [...attendantAnswer];
@@ -65,10 +75,6 @@ const QuizForm = ({ onSubmit, currentQuiz }: IQuizFormProps) => {
 		setAttendantAnswer(data);
 	};
 
-	const answerCollection = collection(db, "answers");
-	const currentUserUID = useSelector(
-		(state: RootState) => state.auth.user?.uid,
-	);
 	const handleOk = async () => {
 		setIsModalOpen(false);
 		if (currentUserUID) {
