@@ -49,6 +49,13 @@ module.exports = {
 					borderColor: "#F26D21",
 					color: "#F26D21",
 				},
+				".btn-secondary": {
+					backgroundColor: "#EDEDED",
+					color: "#000",
+					"&:hover": {
+						backgroundColor: "#000 !important",
+					},
+				},
 			});
 		}),
 	],

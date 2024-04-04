@@ -52,7 +52,7 @@ const UserTab = () => {
 								{user.email ? user.email[0].toUpperCase() : ""}
 							</Avatar>
 						}
-						className="flex items-center h-[54px] ml-4 bg-primary text-base"
+						className="flex items-center h-[54px] ml-4 px-2 bg-primary text-base"
 					>
 						<div className="w-20 overflow-hidden font-semibold text-xl">
 							{user.email ? user.email.split("@")[0] : ""}

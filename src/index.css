@@ -264,6 +264,20 @@
 	font-weight: 500;
 }
 
+.ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+	background-color: #f26d21;
+	border: 2px solid white;
+	outline: 2px solid #f26d21;
+}
+
+.ant-radio-wrapper .ant-radio-inner {
+	border-color: #f26d21;
+}
+
+.ant-radio-wrapper .ant-radio-inner::after {
+	background-color: unset;
+}
+
 /* Modal */
 
 /* Modal transparent */
@@ -274,4 +288,35 @@
 
 .ant-modal.transparent .ant-modal-header {
 	display: none;
+}
+
+/* Datepicker */
+.ant-picker-panel {
+	padding: 0 30px;
+}
+.ant-picker-dropdown .ant-picker-header,
+.ant-picker-dropdown .ant-picker-header > button,
+.ant-picker-dropdown .ant-picker-content th {
+	color: #f26d21;
+}
+
+.ant-picker-dropdown .ant-picker-header {
+	border-bottom: 1px solid #f26d21;
+}
+.ant-picker-dropdown
+	.ant-picker-cell-in-view.ant-picker-cell-today
+	.ant-picker-cell-inner::before {
+	border-color: #f26d21;
+}
+
+.ant-picker-dropdown .ant-picker-footer {
+	display: none;
+}
+
+.ant-picker-dropdown
+	.ant-picker-cell-in-view.ant-picker-cell-selected:not(
+		.ant-picker-cell-disabled
+	)
+	.ant-picker-cell-inner {
+	background-color: #f26d21;
 }

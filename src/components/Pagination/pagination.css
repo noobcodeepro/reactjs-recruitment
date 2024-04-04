@@ -1,0 +1,36 @@
+.ant-pagination {
+	background-color: transparent;
+}
+
+.ant-pagination .ant-pagination-item {
+	margin-inline-end: 2px;
+}
+
+.ant-pagination .ant-pagination-item-active {
+	border-radius: 9999px;
+	border: none;
+}
+
+.ant-pagination
+	.ant-pagination-jump-prev
+	.ant-pagination-item-container
+	.ant-pagination-item-ellipsis,
+.ant-pagination
+	.ant-pagination-jump-next
+	.ant-pagination-item-container
+	.ant-pagination-item-ellipsis,
+.ant-pagination .ant-pagination-item a,
+.ant-pagination .ant-pagination-prev .ant-pagination-item-link,
+.ant-pagination .ant-pagination-next .ant-pagination-item-link,
+.ant-pagination .ant-pagination-disabled .ant-pagination-item-link,
+.ant-pagination
+	.ant-pagination-disabled:hover
+	.ant-pagination-item-link {
+	color: rgb(124, 122, 122);
+}
+
+.ant-pagination .ant-pagination-item-active:hover a,
+.ant-pagination .ant-pagination-item-active a,
+.ant-pagination .ant-pagination-next:hover .ant-pagination-item-link {
+	color: white;
+}

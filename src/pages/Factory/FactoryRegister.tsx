@@ -6,20 +6,7 @@ import { SendOutlined } from "@ant-design/icons";
 import { useAppDispatch } from "../../contexts/store";
 import { IFactory } from "../../type/factory.type";
 import { addFactory } from "../../contexts/Factory/factory.slice";
-
-const FormLabel = ({
-	label,
-	className = "",
-}: {
-	label: string;
-	className?: string;
-}) => {
-	return (
-		<div className={`font-semibold text-base ${className}`}>
-			{label}
-		</div>
-	);
-};
+import FormLabel from "../../components/FormLabel/FormLabel";
 
 const FactoryRegister = () => {
 	const [form] = useForm();

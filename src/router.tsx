@@ -9,12 +9,18 @@ import {
 } from "./pages/Auth/index";
 import FactoryRegister from "./pages/Factory/FactoryRegister";
 import JobRegister from "./pages/Jobs/JobRegister";
+import Quiz from "./pages/Quiz/Quiz";
+import LearningProcess from "./pages/LearningProcess/LearningProcess";
 
 export const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <AuthLayout />,
 		children: [
+			{
+				path: "/",
+				element: <Login />,
+			},
 			{
 				path: "/login",
 				element: <Login />,
@@ -54,6 +60,20 @@ export const router = createBrowserRouter([
 			{
 				path: "/job-register",
 				element: <JobRegister />,
+			},
+		],
+	},
+	{
+		path: "/",
+		element: <MainLayout />,
+		children: [
+			{
+				path: "/quiz",
+				element: <Quiz />,
+			},
+			{
+				path: "/learning-process",
+				element: <LearningProcess />,
 			},
 		],
 	},

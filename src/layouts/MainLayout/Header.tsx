@@ -1,11 +1,13 @@
 import { ReactElement, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import NavItem from "./components/NavItem";
 import {
+	BookOutline,
 	FactoryRegister,
 	FindDocument,
 	FormEdit,
 	MenuOutline,
+	QuizIcon,
 	UserSearch,
 } from "../../icons/index";
 import UserTab from "./components/Auth/UserTab";
@@ -14,7 +16,7 @@ export type NavItemType = {
 	label?: string;
 	to?: string;
 	icon?: ReactElement;
-	role?: "enterprise" | "student";
+	role?: "enterprise" | "student" | "attendant";
 };
 
 const navItems: NavItemType[] = [
@@ -42,6 +44,18 @@ const navItems: NavItemType[] = [
 		label: "Doanh nghiệp đăng ký",
 		role: "enterprise",
 	},
+	{
+		to: "/quiz",
+		icon: <QuizIcon />,
+		label: "Thi trắc nghiệm",
+		role: "attendant",
+	},
+	{
+		to: "/learning-process",
+		icon: <BookOutline />,
+		label: "Tiến trình học tập",
+		role: "attendant",
+	},
 ];
 const Header = () => {
 	const param = useLocation();
@@ -67,13 +81,13 @@ const Header = () => {
 	return (
 		<div className="fixed top-0 left-0 right-0 bg-white z-10 ">
 			<div className="container relative mx-auto flex items-center justify-between py-2 lg:py-6 px-4 lg:px-24">
-				<div>
+				<Link to={"/"}>
 					<img
 						src="/images/brand.jpg"
 						alt="brand"
 						className="h-[30px] lg:h-[52px]  object-contain"
 					/>
-				</div>
+				</Link>
 
 				<div className="block lg:hidden" onClick={showDrawer}>
 					<MenuOutline />

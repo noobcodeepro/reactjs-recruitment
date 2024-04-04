@@ -54,6 +54,10 @@ const Login = () => {
 			value: "student",
 			label: <div className="relative">Học sinh / Sinh viên</div>,
 		},
+		{
+			value: "attendant",
+			label: <div className="relative">Attendant</div>,
+		},
 	];
 	return (
 		<div>

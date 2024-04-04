@@ -27,7 +27,7 @@ interface UserType {
 }
 
 interface OtherUserType {
-	role: "enterprise" | "student";
+	role: "enterprise" | "student" | "attendant";
 	birthDay: number | 0;
 	phoneNumber: string | "";
 }
@@ -60,7 +60,7 @@ export const authLogin = createAsyncThunk(
 	}: {
 		email: string;
 		password: string;
-		role?: "enterprise" | "student" | undefined;
+		role?: "enterprise" | "student" | "attendant" | undefined;
 	}) => {
 		console.log("Start logging");
 
@@ -74,7 +74,7 @@ export const authLogin = createAsyncThunk(
 
 		return {
 			user: user,
-			role: role as "enterprise" | "student",
+			role: role as "enterprise" | "student" | "attendant",
 		};
 	},
 );
