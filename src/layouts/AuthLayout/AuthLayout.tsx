@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Navigate, Outlet, useNavigate } from "react-router-dom";
-import { AuthHeader, SidePoster } from "../layouts/Auth/index";
+import { AuthHeader, SidePoster } from "./index";
 import { useSelector } from "react-redux";
-import { RootState } from "../contexts/store";
+import { RootState } from "../../contexts/store";
 
 const AuthLayout = () => {
 	const user = useSelector((state: RootState) => state.auth.user);
